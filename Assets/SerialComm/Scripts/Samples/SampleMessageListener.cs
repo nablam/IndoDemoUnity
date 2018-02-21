@@ -114,6 +114,11 @@ public class SampleMessageListener : MonoBehaviour
 	private string sTagID;
 
 	private static byte[] data_msg = new byte[MAX_MSG_BUFFER_LEN]; //has to be global to remember bytes accumulated so far
+
+    void debugdatabyte() {
+        string test = System.Text.Encoding.ASCII.GetString(data_msg);
+        print(test);
+    }
 	private static int idx_bytes = 0; //has to be global to remember number of bytes accumulated so far
 
 	int msg_start = 0; //location in buffer of message start for parsing
@@ -245,9 +250,11 @@ public class SampleMessageListener : MonoBehaviour
 			msg_start += msg_len;
 		}
 
-		//move extra data back to beginning and reset index
-		//check for extra data
-		if(msg_start>0 && data_msg[msg_start]==MSG_START_CHAR){
+        debugdatabyte();
+
+        //move extra data back to beginning and reset index
+        //check for extra data
+        if (msg_start>0 && data_msg[msg_start]==MSG_START_CHAR){
 			int i = msg_start;
 			idx_bytes=0; 
 			while(data_msg[i]!='.'){

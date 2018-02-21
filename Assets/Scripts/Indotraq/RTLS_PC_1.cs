@@ -47,7 +47,7 @@ public class RTLS_PC_1 : MonoBehaviour {
 	{
 		//if (xpos != 0 && ypos != 0 && zpos != 0) {
 		Vector3 targetPosition = new Vector3 (pos.x + offset.x, pos.y, pos.z + offset.z);
-		Debug.Log ("Location_1= posiX=" + targetPosition.x + " posiY=" + targetPosition.y + " posiZ=" + targetPosition.z);
+		//Debug.Log ("Location_1= posiX=" + targetPosition.x + " posiY=" + targetPosition.y + " posiZ=" + targetPosition.z);
 		transform.position = targetPosition;
 		//}
 
