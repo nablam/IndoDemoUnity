@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Unlit opaque shader.
 // - no lighting
 // - no lightmap support
@@ -26,7 +28,7 @@ Shader "Unlit/Neon Tinted" {
 					
 			v2f_img vert( appdata_img v ) {
 				v2f_img o;
-				o.pos = mul( UNITY_MATRIX_MVP, v.vertex );
+				o.pos = UnityObjectToClipPos( v.vertex );
 				o.uv = v.texcoord;
 				return o;		    
 			}
